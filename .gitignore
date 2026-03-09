@@ -1,0 +1,5 @@
+.DS_Store
+.venv/
+scripts/
+node_modules/
+*.pyc
