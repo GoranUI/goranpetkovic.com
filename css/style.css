@@ -849,6 +849,33 @@ body.gravity-active .project-card:hover .card-media {
   .project-content {
     gap: 1.75rem;
   }
+
+  .project-nav {
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .project-nav-link {
+    width: 46%;
+    gap: 0.35rem;
+  }
+
+  .project-nav-img {
+    border-radius: 10px;
+  }
+
+  .project-nav-direction {
+    font-size: 0.7rem;
+  }
+
+  .project-nav-name {
+    font-size: 0.8rem;
+  }
+
+  .back-to-top {
+    margin-top: 1.5rem;
+  }
 }
 
 /* === Responsive === */
