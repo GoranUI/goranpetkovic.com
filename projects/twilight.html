@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XGPG8CDQCP"></script>
+  <!-- Google tag: load after window load to reduce main-thread work on first paint -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XGPG8CDQCP');
+    window.addEventListener('load', function () {
+      var g = document.createElement('script');
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=G-XGPG8CDQCP';
+      g.async = true;
+      document.head.appendChild(g);
+      g.onload = function () {
+        gtag('js', new Date());
+        gtag('config', 'G-XGPG8CDQCP');
+      };
+    });
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -139,7 +145,10 @@
 
         <nav class="project-nav" aria-label="Project navigation">
           <a class="project-nav-link project-nav-prev" href="/projects/veridica.html">
-            <img class="project-nav-img" src="/assets/portfolio/veridica/Cover-Veridica.png" alt="" width="600" height="400" loading="lazy" decoding="async">
+            <picture>
+              <source srcset="/assets/portfolio/veridica/Cover-Veridica-600w.webp" type="image/webp">
+              <img class="project-nav-img" src="/assets/portfolio/veridica/Cover-Veridica-600w.png" alt="" width="600" height="400" loading="lazy" decoding="async">
+            </picture>
             <span class="project-nav-direction">← Previous</span>
             <span class="project-nav-name">Veridica <span class="project-nav-year">2025</span></span>
           </a>

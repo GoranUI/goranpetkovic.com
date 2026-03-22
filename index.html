@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XGPG8CDQCP"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XGPG8CDQCP');
-  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Goran Petkovic — Senior Product Designer</title>
@@ -29,7 +20,29 @@
   <meta name="twitter:description" content="Portfolio of Goran Petkovic, Senior Product Designer at BoundAI.">
   <meta name="twitter:image" content="https://goranpetkovic.com/assets/og-cover.png">
 
+  <!-- Google tag: load after window load to keep main thread free during first paint -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.addEventListener('load', function () {
+      var g = document.createElement('script');
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=G-XGPG8CDQCP';
+      g.async = true;
+      document.head.appendChild(g);
+      g.onload = function () {
+        gtag('js', new Date());
+        gtag('config', 'G-XGPG8CDQCP');
+      };
+    });
+  </script>
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preload" href="/css/style.min.css" as="style">
+  <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/portfolio/motif/Cover-Motif-600w.webp" as="image" type="image/webp">
+
+  <!-- Adobe Fonts: set Font display → Swap in fonts.adobe.com Web project (kit embed serves font-display:auto until then). -->
   <link rel="preconnect" href="https://use.typekit.net" crossorigin>
   <link rel="preload" as="style" href="https://use.typekit.net/kmj5qkr.css">
   <link rel="stylesheet" href="https://use.typekit.net/kmj5qkr.css" media="print" onload="this.media='all'">
@@ -72,7 +85,10 @@
             <source srcset="/assets/goran-portrait.webp" type="image/webp">
             <img class="portrait portrait-front" src="/assets/goran-portrait.png" alt="Portrait of Goran Petkovic" width="60" height="60" fetchpriority="high">
           </picture>
-          <img class="portrait portrait-back" src="/assets/goran-portrait.png" alt="Alternate portrait of Goran Petkovic" width="60" height="60">
+          <picture>
+            <source srcset="/assets/goran-portrait.webp" type="image/webp">
+            <img class="portrait portrait-back" src="/assets/goran-portrait.png" alt="Alternate portrait of Goran Petkovic" width="60" height="60" decoding="async">
+          </picture>
         </span>
       </button>
 
@@ -116,7 +132,7 @@
           <div class="card-media">
             <picture>
               <source srcset="/assets/portfolio/motif/Cover-Motif-600w.webp 600w, /assets/portfolio/motif/Cover-Motif.webp 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/webp">
-              <img src="/assets/portfolio/motif/Cover-Motif.png" srcset="/assets/portfolio/motif/Cover-Motif-600w.png 600w, /assets/portfolio/motif/Cover-Motif.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="Motif preview" width="600" height="400" loading="eager" decoding="async">
+              <img src="/assets/portfolio/motif/Cover-Motif.png" srcset="/assets/portfolio/motif/Cover-Motif-600w.png 600w, /assets/portfolio/motif/Cover-Motif.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="Motif preview" width="600" height="400" loading="eager" decoding="async" fetchpriority="high">
             </picture>
             <video class="card-video" muted loop playsinline width="600" height="400" aria-hidden="true"></video>
           </div>
@@ -134,7 +150,10 @@
         <a class="project-card project-card-animated" href="/projects/veridica.html" data-animated-card data-static="/assets/portfolio/veridica/Cover-Veridica.png" data-animated="/assets/veridica.webm">
           <p class="card-label"><strong>Veridica</strong> <span>Healthcare</span> <span class="card-year">2025</span></p>
           <div class="card-media">
-            <img src="/assets/portfolio/veridica/Cover-Veridica.png" alt="Veridica preview" width="600" height="400" loading="lazy" decoding="async">
+            <picture>
+              <source srcset="/assets/portfolio/veridica/Cover-Veridica-600w.webp 600w, /assets/portfolio/veridica/Cover-Veridica.webp 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/webp">
+              <img src="/assets/portfolio/veridica/Cover-Veridica.png" srcset="/assets/portfolio/veridica/Cover-Veridica-600w.png 600w, /assets/portfolio/veridica/Cover-Veridica.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="Veridica preview" width="600" height="400" loading="lazy" decoding="async">
+            </picture>
             <video class="card-video" muted loop playsinline width="600" height="400" aria-hidden="true"></video>
           </div>
         </a>

@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XGPG8CDQCP"></script>
+  <!-- Google tag: load after window load to reduce main-thread work on first paint -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XGPG8CDQCP');
+    window.addEventListener('load', function () {
+      var g = document.createElement('script');
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=G-XGPG8CDQCP';
+      g.async = true;
+      document.head.appendChild(g);
+      g.onload = function () {
+        gtag('js', new Date());
+        gtag('config', 'G-XGPG8CDQCP');
+      };
+    });
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,7 +60,10 @@
       </header>
 
       <figure class="project-hero-image">
-        <img src="/assets/portfolio/veridica/Cover-Veridica.png" alt="Veridica product overview" width="1200" height="800" loading="eager" decoding="async">
+        <picture>
+          <source srcset="/assets/portfolio/veridica/Cover-Veridica-600w.webp 600w, /assets/portfolio/veridica/Cover-Veridica.webp 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
+          <img src="/assets/portfolio/veridica/Cover-Veridica.png" srcset="/assets/portfolio/veridica/Cover-Veridica-600w.png 600w, /assets/portfolio/veridica/Cover-Veridica.png 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" alt="Veridica product overview" width="1200" height="800" loading="eager" decoding="async" fetchpriority="high">
+        </picture>
       </figure>
 
       <div class="project-content">
