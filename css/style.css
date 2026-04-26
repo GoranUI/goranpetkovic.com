@@ -44,6 +44,15 @@ body {
   line-height: 1.5;
 }
 
+/* Cross-document view transitions — pure crossfade, no motion */
+@supports (view-transition-name: none) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.15s;
+    animation-timing-function: ease;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -390,7 +399,7 @@ a:hover {
 /* === Footer === */
 
 .site-footer {
-  padding-bottom: 5.5rem;
+  padding-bottom: 4.25rem;
 }
 
 .footer-row {
@@ -398,7 +407,7 @@ a:hover {
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
-  padding-top: 1.25rem;
+  padding-top: 1rem;
   border-top: 1px solid #eaeaea;
 }
 
@@ -540,6 +549,319 @@ body.gravity-active .project-card:hover .card-media {
 
 .bottom-nav .nav-cta:hover {
   background: #444;
+}
+
+/* Pages with floating bottom nav */
+main.has-bottom-nav {
+  padding-bottom: 4.25rem;
+}
+
+/* === About page (helin.design–inspired) === */
+
+.about-page .about-inner {
+  width: min(100% - 3rem, 920px);
+  margin-inline: auto;
+  padding-top: 1.75rem;
+}
+
+.about-page .hero-top {
+  margin-bottom: 1rem;
+}
+
+.about-page .about-portrait-wrap {
+  margin: 0 0 1rem;
+}
+
+.about-page .about-greeting {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.about-page .about-intro {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #333;
+  max-width: 62ch;
+}
+
+.about-page .about-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.25rem, 1fr));
+  gap: 0.5rem 0.65rem;
+  align-items: center;
+  justify-items: center;
+  margin: 1.25rem 0 0;
+  max-width: 100%;
+  padding: 0.25rem 0;
+}
+
+.about-page .about-image-cell {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 6rem;
+  min-height: 5.25rem;
+  aspect-ratio: 1;
+  border: none;
+  background: transparent;
+  overflow: visible;
+  transform-origin: 50% 60%;
+  transition: transform 0.38s cubic-bezier(0.34, 1.25, 0.64, 1);
+}
+
+.about-page .about-image-cell:hover {
+  transform: rotate(14deg);
+}
+
+.about-page .about-image-cell img {
+  width: auto;
+  height: auto;
+  max-width: 5.25rem;
+  max-height: 5.25rem;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.14));
+}
+
+.about-page .about-section {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #eaeaea;
+}
+
+.about-page .about-section-title {
+  margin: 0 0 0.85rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.about-page .experience-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-page .experience-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.about-page .experience-item:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/* Square logo slot — swap for <img> inside .experience-logo when you have assets */
+.about-page .experience-logo {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+  color: #1a1a1a;
+}
+
+.about-page .experience-logo-has-img {
+  background: #fff;
+  border: 1px solid #ececec;
+  padding: 0.25rem;
+  overflow: hidden;
+}
+
+.about-page .experience-logo-svg {
+  background: #fff;
+}
+
+.about-page .experience-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.about-page .experience-logo-text {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.about-page .experience-logo-groteska {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.about-page .experience-logo-freelance {
+  background: #fafafa;
+  color: #888;
+  font-size: 0.75rem;
+}
+
+.about-page .experience-logo-uni {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.about-page .experience-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.about-page .experience-role {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #1a1a1a;
+}
+
+.about-page .experience-role strong {
+  font-weight: 600;
+}
+
+.about-page .experience-meta-line {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: #888;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.65rem;
+}
+
+.about-page .experience-location {
+  color: #888;
+}
+
+.about-page .experience-dates {
+  color: #b8b8b8;
+  font-weight: 400;
+}
+
+/* Certifications: two columns, logo + label — content-sized columns so both sit left as a group */
+.about-page .cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: start;
+  align-items: start;
+  justify-items: start;
+  column-gap: 64px;
+  row-gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-page .cert-cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+}
+
+.about-page .cert-logo {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+}
+
+.about-page .cert-logo-has-img {
+  background: #fff;
+  border: 1px solid #ececec;
+  padding: 0.25rem;
+  overflow: hidden;
+}
+
+.about-page .cert-logo-has-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.about-page .cert-body {
+  min-width: 0;
+}
+
+.about-page .cert-name {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.about-page .cert-dates {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #b8b8b8;
+}
+
+
+@media (max-width: 700px) {
+  .about-page .about-inner {
+    padding-top: 1.35rem;
+  }
+
+  .about-page .about-image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));
+    gap: 0.45rem 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .about-page .about-image-cell {
+    max-width: 5.25rem;
+    min-height: 4.5rem;
+  }
+
+  .about-page .about-image-cell img {
+    max-width: 4.5rem;
+    max-height: 4.5rem;
+  }
+
+  .about-page .experience-item {
+    gap: 0.75rem;
+  }
+
+  .about-page .experience-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 9px;
+  }
+
+  .about-page .cert-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 9px;
+  }
+
+  .about-page .cert-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* === Project detail page === */
@@ -927,5 +1249,20 @@ body.gravity-active .project-card:hover .card-media {
   .social-links a,
   .bottom-nav a {
     transition: none;
+  }
+
+  .about-page .about-image-cell {
+    transition: none;
+  }
+
+  .about-page .about-image-cell:hover {
+    transform: none;
+  }
+
+  @supports (view-transition-name: none) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 0.001ms !important;
+    }
   }
 }

@@ -7,6 +7,7 @@
   <meta name="description" content="Goran Petkovic is a 0→1 Senior Product Designer with 7 years of experience at BoundAI. Portfolio of digital product design work.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#ffffff">
+  <meta name="view-transition" content="same-origin">
   <link rel="canonical" href="https://goranpetkovic.com/">
 
   <meta property="og:type" content="website">
@@ -41,6 +42,7 @@
   <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/webp" imagesrcset="/assets/portfolio/motif/Cover-Motif-600w.webp 600w, /assets/portfolio/motif/Cover-Motif-750w.webp 750w, /assets/portfolio/motif/Cover-Motif.webp 1200w" imagesizes="(max-width: 700px) calc(100vw - 3rem), 450px">
+  <link rel="prefetch" href="/about.html" as="document">
 
   <link rel="stylesheet" href="/css/style.min.css">
 
@@ -61,10 +63,10 @@
   }
   </script>
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <main id="main">
+  <main id="main" class="has-bottom-nav">
     <section class="hero" aria-labelledby="hero-heading">
       <h1 id="hero-heading" class="sr-only">Goran Petkovic — Senior Product Designer</h1>
 
@@ -80,10 +82,7 @@
             <source srcset="/assets/goran-portrait.webp" type="image/webp">
             <img class="portrait portrait-front" src="/assets/goran-portrait.png" alt="Portrait of Goran Petkovic" width="60" height="60" fetchpriority="high">
           </picture>
-          <picture>
-            <source srcset="/assets/goran-portrait.webp" type="image/webp">
-            <img class="portrait portrait-back" src="/assets/goran-portrait.png" alt="Alternate portrait of Goran Petkovic" width="60" height="60" decoding="async">
-          </picture>
+          <img class="portrait portrait-back" src="/assets/goran-portrait.png" alt="" width="60" height="60" decoding="async">
         </span>
       </button>
 
@@ -195,12 +194,11 @@
     </div>
   </footer>
 
-  <!-- <nav class="bottom-nav" aria-label="Primary navigation">
+  <nav class="bottom-nav" aria-label="Primary navigation">
     <a href="/" aria-current="page">Home</a>
-    <a href="#">About me</a>
-    <a href="#">Sketches</a>
+    <a href="/about.html">About me</a>
     <a href="mailto:hello@goranpetkovic.com" class="nav-cta">Contact me</a>
-  </nav> -->
+  </nav>
 
   <script src="/js/main.min.js" defer></script>
 </body>
