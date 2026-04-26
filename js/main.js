@@ -35,103 +35,107 @@ document.querySelectorAll("[data-animated-card]").forEach(card => {
 
 /* --- Portrait coin flip --- */
 (() => {
-  const flipBtn = document.querySelector("[data-portrait-flip]");
-  if (!flipBtn) return;
-
-  const coin = flipBtn.querySelector(".portrait-coin");
-  const backImg = coin.querySelector(".portrait-back");
-  let flipping = false;
-  let side = 0;
+  const flipButtons = document.querySelectorAll("[data-portrait-flip]");
+  if (!flipButtons.length) return;
 
   const alternates = [
     "/assets/cat1.png",
     "/assets/cat2.png"
   ];
 
-  // Mouse-following "Flip!" chip
-  const chip = document.createElement("div");
-  chip.className = "flip-cursor";
-  chip.textContent = "Flip!";
-  document.body.appendChild(chip);
+  let chip = document.querySelector(".flip-cursor");
+  if (!chip) {
+    chip = document.createElement("div");
+    chip.className = "flip-cursor";
+    chip.textContent = "Flip!";
+    document.body.appendChild(chip);
+  }
 
-  flipBtn.addEventListener("mouseenter", () => {
-    chip.classList.add("visible");
-  });
+  flipButtons.forEach((flipBtn) => {
+    const coin = flipBtn.querySelector(".portrait-coin");
+    const backImg = coin && coin.querySelector(".portrait-back");
+    if (!coin || !backImg) return;
 
-  flipBtn.addEventListener("mouseleave", () => {
-    chip.classList.remove("visible");
-  });
+    let flipping = false;
+    let side = 0;
 
-  flipBtn.addEventListener("mousemove", (e) => {
-    chip.style.left = e.clientX + "px";
-    chip.style.top = (e.clientY - 22) + "px";
-  });
+    flipBtn.addEventListener("mouseenter", () => {
+      chip.classList.add("visible");
+    });
 
-  flipBtn.addEventListener("click", () => {
-    if (flipping) return;
-    flipping = true;
+    flipBtn.addEventListener("mouseleave", () => {
+      chip.classList.remove("visible");
+    });
 
-    // Pick random alternate image when flipping to back side
-    if (side === 0) {
-      const randomAlt = alternates[Math.floor(Math.random() * alternates.length)];
-      backImg.src = randomAlt;
-    }
+    flipBtn.addEventListener("mousemove", (e) => {
+      chip.style.left = e.clientX + "px";
+      chip.style.top = (e.clientY - 22) + "px";
+    });
 
-    const duration = 750;
-    const totalSpin = 540;
-    const arcHeight = 70;
-    const startAngle = side * 180;
-    const endAngle = startAngle + totalSpin;
-    side = side === 0 ? 1 : 0;
+    flipBtn.addEventListener("click", () => {
+      if (flipping) return;
+      flipping = true;
 
-    const start = performance.now();
-
-    function tick(now) {
-      let t = (now - start) / duration;
-      if (t > 1) t = 1;
-
-      // Two-phase ease: fast spin at start, dramatic slow-down for last turn
-      // First 60% of time covers 80% of spin (fast), last 40% covers 20% (slow landing)
-      let ease;
-      if (t < 0.55) {
-        // Fast phase — quadratic in
-        const p = t / 0.55;
-        ease = 0.75 * p * p;
-      } else {
-        // Slow dramatic landing — smooth out
-        const p = (t - 0.55) / 0.45;
-        ease = 0.75 + 0.25 * (1 - Math.pow(1 - p, 3));
+      if (side === 0) {
+        const randomAlt = alternates[Math.floor(Math.random() * alternates.length)];
+        const pic = backImg.closest("picture");
+        if (pic) {
+          pic.querySelectorAll("source").forEach((el) => el.remove());
+        }
+        backImg.removeAttribute("srcset");
+        backImg.src = randomAlt;
       }
 
-      // Rotation
-      const angle = startAngle + totalSpin * ease;
+      const duration = 750;
+      const totalSpin = 540;
+      const arcHeight = 70;
+      const startAngle = side * 180;
+      const endAngle = startAngle + totalSpin;
+      side = side === 0 ? 1 : 0;
 
-      // Vertical arc: parabola peaking at t=0.4
-      const peakT = 0.4;
-      const arc = t < peakT
-        ? -arcHeight * (t / peakT)
-        : -arcHeight * (1 - ((t - peakT) / (1 - peakT)));
+      const start = performance.now();
 
-      // Small bounce at the end
-      let bounceY = 0;
-      if (t > 0.85) {
-        const bt = (t - 0.85) / 0.15; // 0→1 in last 15%
-        bounceY = Math.sin(bt * Math.PI) * 4; // tiny 4px bounce
+      function tick(now) {
+        let t = (now - start) / duration;
+        if (t > 1) t = 1;
+
+        // Two-phase ease: fast spin at start, dramatic slow-down for last turn
+        // First 60% of time covers 80% of spin (fast), last 40% covers 20% (slow landing)
+        let ease;
+        if (t < 0.55) {
+          const p = t / 0.55;
+          ease = 0.75 * p * p;
+        } else {
+          const p = (t - 0.55) / 0.45;
+          ease = 0.75 + 0.25 * (1 - Math.pow(1 - p, 3));
+        }
+
+        const angle = startAngle + totalSpin * ease;
+
+        const peakT = 0.4;
+        const arc = t < peakT
+          ? -arcHeight * (t / peakT)
+          : -arcHeight * (1 - ((t - peakT) / (1 - peakT)));
+
+        let bounceY = 0;
+        if (t > 0.85) {
+          const bt = (t - 0.85) / 0.15;
+          bounceY = Math.sin(bt * Math.PI) * 4;
+        }
+
+        coin.style.transform =
+          `translateY(${(arc - bounceY).toFixed(1)}px) rotateY(${angle.toFixed(1)}deg)`;
+
+        if (t < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          coin.style.transform = `translateY(0) rotateY(${endAngle}deg)`;
+          flipping = false;
+        }
       }
 
-      coin.style.transform =
-        `translateY(${(arc - bounceY).toFixed(1)}px) rotateY(${angle.toFixed(1)}deg)`;
-
-      if (t < 1) {
-        requestAnimationFrame(tick);
-      } else {
-        // Snap to clean final angle
-        coin.style.transform = `translateY(0) rotateY(${endAngle}deg)`;
-        flipping = false;
-      }
-    }
-
-    requestAnimationFrame(tick);
+      requestAnimationFrame(tick);
+    });
   });
 })();
 
