@@ -14,34 +14,18 @@
   <meta property="og:title" content="Goran Petkovic — Senior Product Designer">
   <meta property="og:description" content="Portfolio of Goran Petkovic, Senior Product Designer.">
   <meta property="og:url" content="https://goranpetkovic.com/">
-  <meta property="og:image" content="https://goranpetkovic.com/assets/og-cover.png">
+  <meta property="og:image" content="https://goranpetkovic.com/assets/og-cover.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Goran Petkovic — Senior Product Designer">
   <meta name="twitter:description" content="Portfolio of Goran Petkovic, Senior Product Designer.">
-  <meta name="twitter:image" content="https://goranpetkovic.com/assets/og-cover.png">
-
-  <!-- Google tag: load after window load to keep main thread free during first paint -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.addEventListener('load', function () {
-      var g = document.createElement('script');
-      g.src = 'https://www.googletagmanager.com/gtag/js?id=G-XGPG8CDQCP';
-      g.async = true;
-      document.head.appendChild(g);
-      g.onload = function () {
-        gtag('js', new Date());
-        gtag('config', 'G-XGPG8CDQCP');
-      };
-    });
-  </script>
+  <meta name="twitter:image" content="https://goranpetkovic.com/assets/og-cover.jpg">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preload" href="/css/style.min.css" as="style">
   <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/webp" imagesrcset="/assets/portfolio/motif/Cover-Motif-600w.webp 600w, /assets/portfolio/motif/Cover-Motif-750w.webp 750w, /assets/portfolio/motif/Cover-Motif.webp 1200w" imagesizes="(max-width: 700px) calc(100vw - 3rem), 450px">
+  <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/portfolio/struct/Cover-Struct-600w.avif 600w, /assets/portfolio/struct/Cover-Struct-750w.avif 750w, /assets/portfolio/struct/Cover-Struct.avif 1200w" imagesizes="(max-width: 700px) calc(100vw - 3rem), 450px" fetchpriority="high">
   <link rel="prefetch" href="/about.html" as="document">
 
   <link rel="stylesheet" href="/css/style.min.css">
@@ -79,9 +63,9 @@
         <span class="portrait-coin">
           <picture>
             <source srcset="/assets/goran-portrait.webp" type="image/webp">
-            <img class="portrait portrait-front" src="/assets/goran-portrait.png" alt="Portrait of Goran Petkovic" width="60" height="60" fetchpriority="high">
+            <img class="portrait portrait-front" src="/assets/goran-portrait.png" alt="Portrait of Goran Petkovic" width="60" height="60" decoding="async">
           </picture>
-          <img class="portrait portrait-back" src="/assets/goran-portrait.png" alt="" width="60" height="60" decoding="async">
+          <img class="portrait portrait-back" alt="" width="60" height="60" decoding="async">
         </span>
       </button>
 
@@ -114,8 +98,9 @@
           <p class="card-label"><strong>StructAI</strong> <span>AI</span> <span class="card-year">2026</span></p>
           <div class="card-media">
             <picture>
+              <source srcset="/assets/portfolio/struct/Cover-Struct-600w.avif 600w, /assets/portfolio/struct/Cover-Struct-750w.avif 750w, /assets/portfolio/struct/Cover-Struct.avif 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/avif">
               <source srcset="/assets/portfolio/struct/Cover-Struct-600w.webp 600w, /assets/portfolio/struct/Cover-Struct-750w.webp 750w, /assets/portfolio/struct/Cover-Struct.webp 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/webp">
-              <img src="/assets/portfolio/struct/Cover-Struct.png" srcset="/assets/portfolio/struct/Cover-Struct-600w.png 600w, /assets/portfolio/struct/Cover-Struct.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="StructAI preview" width="600" height="400" loading="eager" decoding="async">
+              <img src="/assets/portfolio/struct/Cover-Struct.png" srcset="/assets/portfolio/struct/Cover-Struct-600w.png 600w, /assets/portfolio/struct/Cover-Struct.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="StructAI preview" width="600" height="400" loading="eager" fetchpriority="high">
             </picture>
             <video class="card-video" muted loop playsinline width="600" height="400" aria-hidden="true"></video>
           </div>
@@ -124,8 +109,9 @@
           <p class="card-label"><strong>Motif</strong> <span>Crypto</span> <span class="card-year">2025</span></p>
           <div class="card-media">
             <picture>
+              <source srcset="/assets/portfolio/motif/Cover-Motif-600w.avif 600w, /assets/portfolio/motif/Cover-Motif-750w.avif 750w, /assets/portfolio/motif/Cover-Motif.avif 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/avif">
               <source srcset="/assets/portfolio/motif/Cover-Motif-600w.webp 600w, /assets/portfolio/motif/Cover-Motif-750w.webp 750w, /assets/portfolio/motif/Cover-Motif.webp 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/webp">
-              <img src="/assets/portfolio/motif/Cover-Motif.png" srcset="/assets/portfolio/motif/Cover-Motif-600w.png 600w, /assets/portfolio/motif/Cover-Motif.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="Motif preview" width="600" height="400" loading="eager" decoding="async" fetchpriority="high">
+              <img src="/assets/portfolio/motif/Cover-Motif.png" srcset="/assets/portfolio/motif/Cover-Motif-600w.png 600w, /assets/portfolio/motif/Cover-Motif.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="Motif preview" width="600" height="400" loading="lazy" decoding="async">
             </picture>
             <video class="card-video" muted loop playsinline width="600" height="400" aria-hidden="true"></video>
           </div>
@@ -134,6 +120,7 @@
           <p class="card-label"><strong>Superhuman</strong> <span>Health</span> <span class="card-year">2025</span></p>
           <div class="card-media">
             <picture>
+              <source srcset="/assets/portfolio/superhuman/Cover-Superhumen-600w.avif 600w, /assets/portfolio/superhuman/Cover-Superhumen-750w.avif 750w, /assets/portfolio/superhuman/Cover-Superhumen.avif 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/avif">
               <source srcset="/assets/portfolio/superhuman/Cover-Superhumen-600w.webp 600w, /assets/portfolio/superhuman/Cover-Superhumen-750w.webp 750w, /assets/portfolio/superhuman/Cover-Superhumen.webp 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/webp">
               <img src="/assets/portfolio/superhuman/Cover-Superhumen.png" srcset="/assets/portfolio/superhuman/Cover-Superhumen-600w.png 600w, /assets/portfolio/superhuman/Cover-Superhumen.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="Superhuman preview" width="600" height="400" loading="lazy" decoding="async">
             </picture>
@@ -144,25 +131,29 @@
           <p class="card-label"><strong>Veridica</strong> <span>Healthcare</span> <span class="card-year">2025</span></p>
           <div class="card-media">
             <picture>
+              <source srcset="/assets/portfolio/veridica/Cover-Veridica-600w.avif 600w, /assets/portfolio/veridica/Cover-Veridica-750w.avif 750w, /assets/portfolio/veridica/Cover-Veridica.avif 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/avif">
               <source srcset="/assets/portfolio/veridica/Cover-Veridica-600w.webp 600w, /assets/portfolio/veridica/Cover-Veridica-750w.webp 750w, /assets/portfolio/veridica/Cover-Veridica.webp 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/webp">
               <img src="/assets/portfolio/veridica/Cover-Veridica.png" srcset="/assets/portfolio/veridica/Cover-Veridica-600w.png 600w, /assets/portfolio/veridica/Cover-Veridica.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="Veridica preview" width="600" height="400" loading="lazy" decoding="async">
             </picture>
             <video class="card-video" muted loop playsinline width="600" height="400" aria-hidden="true"></video>
           </div>
         </a>
-        <a class="project-card project-card-animated" href="/projects/twilight.html" data-animated-card data-static="/assets/portfolio/twilight/Cover-Twilight.png" data-animated="/assets/twilight.gif">
+        <a class="project-card project-card-animated" href="/projects/twilight.html" data-animated-card data-static="/assets/portfolio/twilight/Cover-Twilight.png" data-animated="/assets/twilight.webm">
           <p class="card-label"><strong>Twilight</strong> <span>Crypto</span> <span class="card-year">2025</span></p>
           <div class="card-media">
             <picture>
+              <source srcset="/assets/portfolio/twilight/Cover-Twilight-600w.avif 600w, /assets/portfolio/twilight/Cover-Twilight-750w.avif 750w, /assets/portfolio/twilight/Cover-Twilight.avif 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/avif">
               <source srcset="/assets/portfolio/twilight/Cover-Twilight-600w.webp 600w, /assets/portfolio/twilight/Cover-Twilight-750w.webp 750w, /assets/portfolio/twilight/Cover-Twilight.webp 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/webp">
               <img src="/assets/portfolio/twilight/Cover-Twilight.png" srcset="/assets/portfolio/twilight/Cover-Twilight-600w.png 600w, /assets/portfolio/twilight/Cover-Twilight.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="Twilight preview" width="600" height="400" loading="lazy" decoding="async">
             </picture>
+            <video class="card-video" muted loop playsinline width="600" height="400" aria-hidden="true"></video>
           </div>
         </a>
         <a class="project-card project-card-animated" href="/projects/otp.html" data-animated-card data-static="/assets/portfolio/otp/Cover-OTP.png" data-animated="/assets/otp.webm">
           <p class="card-label"><strong>OTP Junior</strong> <span>FinTech</span> <span class="card-year">2024</span></p>
           <div class="card-media">
             <picture>
+              <source srcset="/assets/portfolio/otp/Cover-OTP-600w.avif 600w, /assets/portfolio/otp/Cover-OTP-750w.avif 750w, /assets/portfolio/otp/Cover-OTP.avif 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/avif">
               <source srcset="/assets/portfolio/otp/Cover-OTP-600w.webp 600w, /assets/portfolio/otp/Cover-OTP-750w.webp 750w, /assets/portfolio/otp/Cover-OTP.webp 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/webp">
               <img src="/assets/portfolio/otp/Cover-OTP.png" srcset="/assets/portfolio/otp/Cover-OTP-600w.png 600w, /assets/portfolio/otp/Cover-OTP.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="OTP Junior preview" width="600" height="400" loading="lazy" decoding="async">
             </picture>
@@ -173,6 +164,7 @@
           <p class="card-label"><strong>ParCo</strong> <span>Mobility</span> <span class="card-year">2024</span></p>
           <div class="card-media">
             <picture>
+              <source srcset="/assets/portfolio/parco/Cover-Parco-600w.avif 600w, /assets/portfolio/parco/Cover-Parco-750w.avif 750w, /assets/portfolio/parco/Cover-Parco.avif 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/avif">
               <source srcset="/assets/portfolio/parco/Cover-Parco-600w.webp 600w, /assets/portfolio/parco/Cover-Parco-750w.webp 750w, /assets/portfolio/parco/Cover-Parco.webp 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" type="image/webp">
               <img src="/assets/portfolio/parco/Cover-Parco.png" srcset="/assets/portfolio/parco/Cover-Parco-600w.png 600w, /assets/portfolio/parco/Cover-Parco.png 1200w" sizes="(max-width: 700px) calc(100vw - 3rem), 450px" alt="ParCo preview" width="600" height="400" loading="lazy" decoding="async">
             </picture>

@@ -14,34 +14,16 @@
   <meta property="og:title" content="About me — Goran Petkovic">
   <meta property="og:description" content="Senior Product Designer. Product design for SaaS, insurtech, fintech, and enterprise.">
   <meta property="og:url" content="https://goranpetkovic.com/about.html">
-  <meta property="og:image" content="https://goranpetkovic.com/assets/og-cover.png">
+  <meta property="og:image" content="https://goranpetkovic.com/assets/og-cover.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About me — Goran Petkovic">
   <meta name="twitter:description" content="Senior Product Designer based in Belgrade.">
-  <meta name="twitter:image" content="https://goranpetkovic.com/assets/og-cover.png">
-
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.addEventListener('load', function () {
-      var g = document.createElement('script');
-      g.src = 'https://www.googletagmanager.com/gtag/js?id=G-XGPG8CDQCP';
-      g.async = true;
-      document.head.appendChild(g);
-      g.onload = function () {
-        gtag('js', new Date());
-        gtag('config', 'G-XGPG8CDQCP');
-      };
-    });
-  </script>
+  <meta name="twitter:image" content="https://goranpetkovic.com/assets/og-cover.jpg">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preload" href="/css/style.min.css" as="style">
-  <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/goran-portrait.webp" as="image" type="image/webp">
-  <link rel="preload" href="/assets/about/personal/cutout/sony.png" as="image" type="image/png">
+  <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
   <link rel="prefetch" href="/" as="document">
   <link rel="stylesheet" href="/css/style.min.css">
 </head>
@@ -62,9 +44,9 @@
           <span class="portrait-coin">
             <picture>
               <source srcset="/assets/goran-portrait.webp" type="image/webp">
-              <img class="portrait portrait-front" src="/assets/goran-portrait.png" alt="Portrait of Goran Petkovic" width="60" height="60" fetchpriority="high">
+              <img class="portrait portrait-front" src="/assets/goran-portrait.png" alt="Portrait of Goran Petkovic" width="60" height="60" decoding="async">
             </picture>
-            <img class="portrait portrait-back" src="/assets/goran-portrait.png" alt="" width="60" height="60" decoding="async">
+            <img class="portrait portrait-back" alt="" width="60" height="60" decoding="async">
           </span>
         </button>
       </div>
@@ -76,19 +58,34 @@
 
       <div class="about-image-grid" aria-label="Gear I use">
         <figure class="about-image-cell" title="Sony WH-1000XM5">
-          <img src="/assets/about/personal/cutout/sony.png" alt="Sony WH-1000XM5 wireless headphones" width="236" height="280" fetchpriority="high" loading="eager" decoding="async">
+          <picture>
+            <source srcset="/assets/about/personal/cutout/sony.webp" type="image/webp">
+            <img src="/assets/about/personal/cutout/sony.png" alt="Sony WH-1000XM5 wireless headphones" width="185" height="220" loading="lazy" decoding="async">
+          </picture>
         </figure>
         <figure class="about-image-cell" title="Logitech MX Master 3S">
-          <img src="/assets/about/personal/cutout/logitech.png" alt="Logitech MX Master 3S mouse" width="185" height="280" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="/assets/about/personal/cutout/logitech.webp" type="image/webp">
+            <img src="/assets/about/personal/cutout/logitech.png" alt="Logitech MX Master 3S mouse" width="145" height="220" loading="lazy" decoding="async">
+          </picture>
         </figure>
         <figure class="about-image-cell" title="MagSafe battery">
-          <img src="/assets/about/personal/cutout/ipower.png" alt="MagSafe compatible portable battery" width="280" height="200" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="/assets/about/personal/cutout/ipower.webp" type="image/webp">
+            <img src="/assets/about/personal/cutout/ipower.png" alt="MagSafe compatible portable battery" width="220" height="157" loading="lazy" decoding="async">
+          </picture>
         </figure>
         <figure class="about-image-cell" title="NuPhy keyboard">
-          <img src="/assets/about/personal/cutout/nuphy.png" alt="NuPhy mechanical keyboard" width="280" height="199" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="/assets/about/personal/cutout/nuphy.webp" type="image/webp">
+            <img src="/assets/about/personal/cutout/nuphy.png" alt="NuPhy mechanical keyboard" width="220" height="156" loading="lazy" decoding="async">
+          </picture>
         </figure>
         <figure class="about-image-cell" title="Grid Systems in Graphic Design">
-          <img src="/assets/about/personal/cutout/raster.png" alt="Grid Systems in Graphic Design by Josef Müller-Brockmann (book cover)" width="199" height="280" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="/assets/about/personal/cutout/raster.webp" type="image/webp">
+            <img src="/assets/about/personal/cutout/raster.png" alt="Grid Systems in Graphic Design by Josef Müller-Brockmann (book cover)" width="156" height="220" loading="lazy" decoding="async">
+          </picture>
         </figure>
       </div>
 
@@ -97,7 +94,10 @@
         <ul class="experience-list">
           <li class="experience-item">
             <div class="experience-logo experience-logo-has-img" aria-hidden="true">
-              <img src="/assets/about/groteska.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              <picture>
+                <source srcset="/assets/about/groteska.webp" type="image/webp">
+                <img src="/assets/about/groteska.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="experience-body">
               <p class="experience-role">Founder at <strong>Groteska Studio</strong></p>
@@ -106,7 +106,10 @@
           </li>
           <li class="experience-item">
             <div class="experience-logo experience-logo-has-img" aria-hidden="true">
-              <img src="/assets/about/bound-ai.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              <picture>
+                <source srcset="/assets/about/bound-ai.webp" type="image/webp">
+                <img src="/assets/about/bound-ai.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="experience-body">
               <p class="experience-role">Product Designer at <strong>Bound AI</strong></p>
@@ -124,7 +127,10 @@
           </li>
           <li class="experience-item">
             <div class="experience-logo experience-logo-has-img" aria-hidden="true">
-              <img src="/assets/about/30hills.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              <picture>
+                <source srcset="/assets/about/30hills.webp" type="image/webp">
+                <img src="/assets/about/30hills.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="experience-body">
               <p class="experience-role">UX UI Designer at <strong>30Hills</strong></p>
@@ -133,7 +139,10 @@
           </li>
           <li class="experience-item">
             <div class="experience-logo experience-logo-has-img" aria-hidden="true">
-              <img src="/assets/about/metropolitan.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              <picture>
+                <source srcset="/assets/about/metropolitan.webp" type="image/webp">
+                <img src="/assets/about/metropolitan.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="experience-body">
               <p class="experience-role">Teaching Assistant at <strong>Metropolitan University</strong></p>
@@ -151,7 +160,10 @@
           </li>
           <li class="experience-item">
             <div class="experience-logo experience-logo-has-img" aria-hidden="true">
-              <img src="/assets/about/mit-cdl.jpg" alt="" width="48" height="48" loading="lazy" decoding="async">
+              <picture>
+                <source srcset="/assets/about/mit-cdl.webp" type="image/webp">
+                <img src="/assets/about/mit-cdl.jpg" alt="" width="48" height="48" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="experience-body">
               <p class="experience-role">Product Designer at <strong>MIT CDL JOBS Inc</strong></p>
@@ -175,7 +187,10 @@
         <ul class="cert-grid">
           <li class="cert-cell">
             <div class="cert-logo cert-logo-has-img" aria-hidden="true">
-              <img src="/assets/about/framer-expert.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              <picture>
+                <source srcset="/assets/about/framer-expert.webp" type="image/webp">
+                <img src="/assets/about/framer-expert.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="cert-body">
               <p class="cert-name">Framer Expert</p>
@@ -184,7 +199,10 @@
           </li>
           <li class="cert-cell">
             <div class="cert-logo cert-logo-has-img" aria-hidden="true">
-              <img src="/assets/about/webflow-expert.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              <picture>
+                <source srcset="/assets/about/webflow-expert.webp" type="image/webp">
+                <img src="/assets/about/webflow-expert.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+              </picture>
             </div>
             <div class="cert-body">
               <p class="cert-name">Webflow Expert</p>

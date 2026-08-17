@@ -16,7 +16,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: optional;
   src: url('../assets/fonts/inter-latin-500-normal.woff2') format('woff2');
 }
 
@@ -24,7 +24,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: optional;
   src: url('../assets/fonts/inter-latin-600-normal.woff2') format('woff2');
 }
 
@@ -329,6 +329,11 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem 1.25rem;
+}
+
+.project-card:nth-child(n + 3) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 280px;
 }
 
 .project-card {
@@ -640,7 +645,7 @@ main.has-bottom-nav {
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #999;
+  color: #6b6b6b;
 }
 
 .about-page .experience-list {
@@ -656,6 +661,11 @@ main.has-bottom-nav {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #f0f0f0;
+}
+
+.about-page .experience-item:nth-child(n + 3) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 4.5rem;
 }
 
 .about-page .experience-item:last-child {
@@ -710,7 +720,7 @@ main.has-bottom-nav {
 
 .about-page .experience-logo-freelance {
   background: #fafafa;
-  color: #888;
+  color: #5c5c5c;
   font-size: 0.75rem;
 }
 
@@ -740,7 +750,7 @@ main.has-bottom-nav {
   margin: 0;
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: #888;
+  color: #6b6b6b;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -748,11 +758,11 @@ main.has-bottom-nav {
 }
 
 .about-page .experience-location {
-  color: #888;
+  color: #6b6b6b;
 }
 
 .about-page .experience-dates {
-  color: #b8b8b8;
+  color: #6b6b6b;
   font-weight: 400;
 }
 
@@ -818,7 +828,7 @@ main.has-bottom-nav {
 .about-page .cert-dates {
   margin: 0;
   font-size: 0.8125rem;
-  color: #b8b8b8;
+  color: #6b6b6b;
 }
 
 
@@ -989,7 +999,7 @@ main.has-bottom-nav {
   margin: 0 0 0.75rem;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #999;
+  color: #6b6b6b;
 }
 
 .project-section p {

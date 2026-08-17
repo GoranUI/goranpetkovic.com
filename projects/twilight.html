@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag: load after window load to reduce main-thread work on first paint -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.addEventListener('load', function () {
-      var g = document.createElement('script');
-      g.src = 'https://www.googletagmanager.com/gtag/js?id=G-XGPG8CDQCP';
-      g.async = true;
-      document.head.appendChild(g);
-      g.onload = function () {
-        gtag('js', new Date());
-        gtag('config', 'G-XGPG8CDQCP');
-      };
-    });
-  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Twilight Finance — Goran Petkovic</title>
@@ -29,8 +14,15 @@
   <meta property="og:description" content="Product design case study: CCA auction dashboard, trading interface, and marketing website.">
   <meta property="og:url" content="https://goranpetkovic.com/projects/twilight.html">
 
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:image" content="https://goranpetkovic.com/assets/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preload" href="/css/style.min.css" as="style">
+  <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/portfolio/twilight/Cover-Twilight-600w.avif 600w, /assets/portfolio/twilight/Cover-Twilight-750w.avif 750w, /assets/portfolio/twilight/Cover-Twilight.avif 1200w" imagesizes="(max-width: 900px) calc(100vw - 3rem), 860px" fetchpriority="high">
   <link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
@@ -61,8 +53,9 @@
 
       <figure class="project-hero-image">
         <picture>
-          <source srcset="/assets/portfolio/twilight/Cover-Twilight.webp" type="image/webp">
-          <img src="/assets/portfolio/twilight/Cover-Twilight.png" alt="Twilight Finance product overview" width="1200" height="800" loading="eager" decoding="async">
+          <source srcset="/assets/portfolio/twilight/Cover-Twilight-600w.avif 600w, /assets/portfolio/twilight/Cover-Twilight-750w.avif 750w, /assets/portfolio/twilight/Cover-Twilight.avif 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/avif">
+          <source srcset="/assets/portfolio/twilight/Cover-Twilight-600w.webp 600w, /assets/portfolio/twilight/Cover-Twilight-750w.webp 750w, /assets/portfolio/twilight/Cover-Twilight.webp 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
+          <img src="/assets/portfolio/twilight/Cover-Twilight.png" alt="Twilight Finance product overview" width="1200" height="800" fetchpriority="high" loading="eager" decoding="async">
         </picture>
       </figure>
 
@@ -95,49 +88,49 @@
           <h2 class="project-section-title">Work</h2>
           <figure class="project-image">
             <picture>
-              <source srcset="/assets/portfolio/twilight/Photo1-Twilight.webp" type="image/webp">
+              <source srcset="/assets/portfolio/twilight/Photo1-Twilight-600w.webp 600w, /assets/portfolio/twilight/Photo1-Twilight-750w.webp 750w, /assets/portfolio/twilight/Photo1-Twilight.webp 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
               <img src="/assets/portfolio/twilight/Photo1-Twilight.png" alt="Twilight for Bitcoin — hero and Create your Wallet CTA" width="1200" height="800" loading="lazy" decoding="async">
             </picture>
           </figure>
           <figure class="project-image">
             <picture>
-              <source srcset="/assets/portfolio/twilight/Photo2-Twilight.webp" type="image/webp">
+              <source srcset="/assets/portfolio/twilight/Photo2-Twilight-600w.webp 600w, /assets/portfolio/twilight/Photo2-Twilight-750w.webp 750w, /assets/portfolio/twilight/Photo2-Twilight.webp 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
               <img src="/assets/portfolio/twilight/Photo2-Twilight.png" alt="Twilight interface or dashboard" width="1200" height="800" loading="lazy" decoding="async">
             </picture>
           </figure>
           <figure class="project-image">
             <picture>
-              <source srcset="/assets/portfolio/twilight/Photo3-Twilight.webp" type="image/webp">
+              <source srcset="/assets/portfolio/twilight/Photo3-Twilight-600w.webp 600w, /assets/portfolio/twilight/Photo3-Twilight-750w.webp 750w, /assets/portfolio/twilight/Photo3-Twilight.webp 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
               <img src="/assets/portfolio/twilight/Photo3-Twilight.png" alt="Twilight product screen" width="1200" height="800" loading="lazy" decoding="async">
             </picture>
           </figure>
           <figure class="project-image">
             <picture>
-              <source srcset="/assets/portfolio/twilight/Photo4-Twilight.webp" type="image/webp">
+              <source srcset="/assets/portfolio/twilight/Photo4-Twilight-600w.webp 600w, /assets/portfolio/twilight/Photo4-Twilight-750w.webp 750w, /assets/portfolio/twilight/Photo4-Twilight.webp 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
               <img src="/assets/portfolio/twilight/Photo4-Twilight.png" alt="Twilight product visual" width="1200" height="800" loading="lazy" decoding="async">
             </picture>
           </figure>
           <figure class="project-image">
             <picture>
-              <source srcset="/assets/portfolio/twilight/Photo5-Twilight.webp" type="image/webp">
+              <source srcset="/assets/portfolio/twilight/Photo5-Twilight-600w.webp 600w, /assets/portfolio/twilight/Photo5-Twilight-750w.webp 750w, /assets/portfolio/twilight/Photo5-Twilight.webp 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
               <img src="/assets/portfolio/twilight/Photo5-Twilight.png" alt="Twilight product screen" width="1200" height="800" loading="lazy" decoding="async">
             </picture>
           </figure>
           <figure class="project-image">
             <picture>
-              <source srcset="/assets/portfolio/twilight/Photo6-Twilight.webp" type="image/webp">
+              <source srcset="/assets/portfolio/twilight/Photo6-Twilight-600w.webp 600w, /assets/portfolio/twilight/Photo6-Twilight-750w.webp 750w, /assets/portfolio/twilight/Photo6-Twilight.webp 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
               <img src="/assets/portfolio/twilight/Photo6-Twilight.png" alt="Twilight product screen" width="1200" height="800" loading="lazy" decoding="async">
             </picture>
           </figure>
           <figure class="project-image">
             <picture>
-              <source srcset="/assets/portfolio/twilight/Photo8-Twilight.webp" type="image/webp">
+              <source srcset="/assets/portfolio/twilight/Photo8-Twilight-600w.webp 600w, /assets/portfolio/twilight/Photo8-Twilight-750w.webp 750w, /assets/portfolio/twilight/Photo8-Twilight.webp 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
               <img src="/assets/portfolio/twilight/Photo8-Twilight.png" alt="Twilight product screen" width="1200" height="800" loading="lazy" decoding="async">
             </picture>
           </figure>
           <figure class="project-image project-image-full">
             <picture>
-              <source srcset="/assets/portfolio/twilight/Photo7-Twilight.webp" type="image/webp">
+              <source srcset="/assets/portfolio/twilight/Photo7-Twilight-600w.webp 600w, /assets/portfolio/twilight/Photo7-Twilight-750w.webp 750w, /assets/portfolio/twilight/Photo7-Twilight.webp 1200w" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
               <img src="/assets/portfolio/twilight/Photo7-Twilight.png" alt="Twilight full-width visual" width="1200" height="800" loading="lazy" decoding="async">
             </picture>
           </figure>
@@ -146,7 +139,8 @@
         <nav class="project-nav" aria-label="Project navigation">
           <a class="project-nav-link project-nav-prev" href="/projects/veridica.html">
             <picture>
-              <source srcset="/assets/portfolio/veridica/Cover-Veridica-600w.webp" type="image/webp">
+              <source srcset="/assets/portfolio/veridica/Cover-Veridica-600w.avif" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/avif">
+              <source srcset="/assets/portfolio/veridica/Cover-Veridica-600w.webp" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
               <img class="project-nav-img" src="/assets/portfolio/veridica/Cover-Veridica-600w.png" alt="" width="600" height="400" loading="lazy" decoding="async">
             </picture>
             <span class="project-nav-direction">← Previous</span>
@@ -154,7 +148,8 @@
           </a>
           <a class="project-nav-link project-nav-next" href="/projects/otp.html">
             <picture>
-              <source srcset="/assets/portfolio/otp/Cover-OTP-600w.webp" type="image/webp">
+              <source srcset="/assets/portfolio/otp/Cover-OTP-600w.avif" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/avif">
+              <source srcset="/assets/portfolio/otp/Cover-OTP-600w.webp" sizes="(max-width: 900px) calc(100vw - 3rem), 860px" type="image/webp">
               <img class="project-nav-img" src="/assets/portfolio/otp/Cover-OTP-600w.png" alt="" width="600" height="400" loading="lazy" decoding="async">
             </picture>
             <span class="project-nav-direction">Next →</span>

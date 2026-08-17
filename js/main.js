@@ -441,3 +441,27 @@ document.querySelectorAll("[data-animated-card]").forEach(card => {
     requestAnimationFrame(step);
   }
 })();
+
+/* Analytics after idle so it does not compete with first paint */
+(() => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  function load() {
+    const s = document.createElement("script");
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-XGPG8CDQCP";
+    s.async = true;
+    s.onload = () => {
+      gtag("js", new Date());
+      gtag("config", "G-XGPG8CDQCP");
+    };
+    document.head.appendChild(s);
+  }
+
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(load, { timeout: 4000 });
+  } else {
+    window.addEventListener("load", () => setTimeout(load, 1));
+  }
+})();
